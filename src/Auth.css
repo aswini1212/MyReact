@@ -1,0 +1,188 @@
+/* Base reset */
+* {
+  background-color: rgb(255, 168, 220);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body setup */
+body {
+  min-height: 100vh;
+  background-color: rgb(255, 116, 199);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Concentric Gradient Ripple Background */
+.ripple-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 2000px;
+  height: 2000px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ripple-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(245, 196, 105), rgb(255, 116, 199));
+  animation: ripplePulse 8s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+/* Each circle is larger than the one before */
+.ripple-circle:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  animation-delay: 0s;
+}
+.ripple-circle:nth-child(2) {
+  width: 600px;
+  height: 600px;
+  animation-delay: 0.6s;
+}
+.ripple-circle:nth-child(3) {
+  width: 800px;
+  height: 800px;
+  animation-delay: 1.2s;
+}
+.ripple-circle:nth-child(4) {
+  width: 1000px;
+  height: 1000px;
+  animation-delay: 1.8s;
+}
+.ripple-circle:nth-child(5) {
+  width: 1200px;
+  height: 1200px;
+  animation-delay: 2.4s;
+}
+.ripple-circle:nth-child(6) {
+  width: 1400px;
+  height: 1400px;
+  animation-delay: 3s;
+}
+
+/* Subtle pulse animation */
+@keyframes ripplePulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.2;
+  }
+}
+
+
+/* Auth box styling */
+.auth-container {
+  max-width: 420px;
+  background: #faece3;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  z-index: 2;
+  position: relative;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title styles */
+.auth-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  background-color: transparent;
+}
+
+.highlight-orange {
+  background: linear-gradient(to right, orange, rgb(234, 102, 186));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-subtext {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  background-color: #faece3;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.3rem;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff6a00;
+  box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
+}
+
+/* Buttons */
+.primary-btn {
+  background: linear-gradient(to right, #ff6a00, #f754a2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+/* Message display */
+.message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  background: linear-gradient(to right, orange, rgb(234, 102, 186));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Link under form */
+.switch-link {
+  background-color:#faece3 ;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}

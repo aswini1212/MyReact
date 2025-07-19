@@ -1,0 +1,19 @@
+*
+{
+  background-color: rgb(77, 69, 69);
+}
+.Card
+{
+  color:blanchedalmond;
+  font-family:'Times New Roman', Times, serif;
+  padding-left: 10px;
+  padding-top: 10px;
+  display:flex;
+  align-items:center;
+  text-decoration-color: antiquewhite;
+}
+.Card1
+{
+  display:flex;
+  align-items:center;
+}
